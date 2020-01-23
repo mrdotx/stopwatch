@@ -1,5 +1,5 @@
 # stopwatch
 
-script to measure time
+shell script to measure time
 
 ![](screenshot.png)
