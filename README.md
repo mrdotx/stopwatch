@@ -2,4 +2,4 @@
 
 shell script to measure time
 
-![](screenshot.png)
+![screenshot](screenshot.png)
