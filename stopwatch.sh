@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # path:       ~/projects/stopwatch/stopwatch.sh
-# user:       klassiker [mrdotx]
+# author:     klassiker [mrdotx]
 # github:     https://github.com/mrdotx/stopwatch
-# date:       2020-01-23T19:26:34+0100
+# date:       2020-02-03T13:48:35+0100
 
 script=$(basename "$0")
 help="$script [-h/--help] -- script to measure the time
