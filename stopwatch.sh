@@ -3,7 +3,7 @@
 # path:       ~/projects/stopwatch/stopwatch.sh
 # author:     klassiker [mrdotx]
 # github:     https://github.com/mrdotx/stopwatch
-# date:       2020-02-03T13:48:35+0100
+# date:       2020-02-24T12:23:45+0100
 
 script=$(basename "$0")
 help="$script [-h/--help] -- script to measure the time
@@ -78,7 +78,7 @@ stopwatch(){
 
 case "$1" in
     -h|--help)
-        echo "$help"
+        printf "%s\n" "$help"
         exit0
         ;;
     -d)
@@ -87,7 +87,7 @@ case "$1" in
         ;;
     *)
         clear
-        echo "$header"
+        printf "%s\n" "$header"
         stopwatch
         ;;
 esac
