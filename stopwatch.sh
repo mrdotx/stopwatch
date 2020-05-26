@@ -3,7 +3,7 @@
 # path:       /home/klassiker/.local/share/repos/stopwatch/stopwatch.sh
 # author:     klassiker [mrdotx]
 # github:     https://github.com/mrdotx/stopwatch
-# date:       2020-04-29T11:17:56+0200
+# date:       2020-05-26T12:38:02+0200
 
 script=$(basename "$0")
 help="$script [-h/--help] -- script to measure the time
@@ -35,7 +35,7 @@ set_t_now(){
     t_now=$(date +%s%3N)
 }
 
-t_date() {
+t_date(){
     t="$1"
     s=$(printf "%1d\n" "${t: 0 : -3}")
     ms=${t: -3 : 3 }
