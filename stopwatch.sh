@@ -3,7 +3,7 @@
 # path:       /home/klassiker/.local/share/repos/stopwatch/stopwatch.sh
 # author:     klassiker [mrdotx]
 # github:     https://github.com/mrdotx/stopwatch
-# date:       2020-05-26T12:38:02+0200
+# date:       2020-06-06T09:26:53+0200
 
 script=$(basename "$0")
 help="$script [-h/--help] -- script to measure the time
@@ -31,28 +31,28 @@ t_idx=0
 stat=2
 n=1
 
-set_t_now(){
+set_t_now() {
     t_now=$(date +%s%3N)
 }
 
-t_date(){
+t_date() {
     t="$1"
     s=$(printf "%1d\n" "${t: 0 : -3}")
     ms=${t: -3 : 3 }
     printf "\r%s" "   $n) $(TZ=UTC date -d"@$s.$ms" +%H:%M:%S.%3N)"
 }
 
-run(){
+run() {
     t_stop=$((t_now-t_idx))
     t_date $t_stop
 }
 
-reset(){
+reset() {
     set_t_now
     t_idx=$t_now
 }
 
-read_key(){
+read_key() {
     last=$1
     read -rsN1 -t.1 key;
     case "$stat" in
@@ -70,7 +70,7 @@ read_key(){
     return "$last";
 }
 
-stopwatch(){
+stopwatch() {
     while [ ! "$key" = "q" ]
     do
         set_t_now
