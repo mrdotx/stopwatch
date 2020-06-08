@@ -3,7 +3,7 @@
 # path:       /home/klassiker/.local/share/repos/stopwatch/stopwatch.sh
 # author:     klassiker [mrdotx]
 # github:     https://github.com/mrdotx/stopwatch
-# date:       2020-06-06T09:26:53+0200
+# date:       2020-06-08T12:21:43+0200
 
 script=$(basename "$0")
 help="$script [-h/--help] -- script to measure the time
@@ -25,17 +25,17 @@ header=" Start/Stop: space
  Quit:       q
  "
 
-t_stop=0
-t_now=0
-t_idx=0
-stat=2
+time_stop=0
+time_now=0
+time_index=0
+status=2
 n=1
 
-set_t_now() {
-    t_now=$(date +%s%3N)
+set_time_now() {
+    time_now=$(date +%s%3N)
 }
 
-t_date() {
+time_date() {
     t="$1"
     s=$(printf "%1d\n" "${t: 0 : -3}")
     ms=${t: -3 : 3 }
@@ -43,19 +43,19 @@ t_date() {
 }
 
 run() {
-    t_stop=$((t_now-t_idx))
-    t_date $t_stop
+    time_stop=$((time_now-time_index))
+    time_date $time_stop
 }
 
 reset() {
-    set_t_now
-    t_idx=$t_now
+    set_time_now
+    time_index=$time_now
 }
 
 read_key() {
     last=$1
     read -rsN1 -t.1 key;
-    case "$stat" in
+    case "$status" in
         1)
             [ "$key" = $'\x20' ] \
                 && printf "\n" \
@@ -73,8 +73,8 @@ read_key() {
 stopwatch() {
     while [ ! "$key" = "q" ]
     do
-        set_t_now
-        case "$stat" in
+        set_time_now
+        case "$status" in
             1)
                 run
                 ;;
@@ -82,8 +82,8 @@ stopwatch() {
                 reset
                 ;;
         esac
-        read_key $stat
-        stat=$?
+        read_key $status
+        status=$?
         sleep .1
     done
 }
