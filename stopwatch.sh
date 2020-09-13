@@ -3,7 +3,7 @@
 # path:       /home/klassiker/.local/share/repos/stopwatch/stopwatch.sh
 # author:     klassiker [mrdotx]
 # github:     https://github.com/mrdotx/stopwatch
-# date:       2020-09-12T15:20:14+0200
+# date:       2020-09-13T11:08:19+0200
 
 script=$(basename "$0")
 help="$script [-h/--help] -- script to measure the time
@@ -71,8 +71,7 @@ read_key() {
 }
 
 stopwatch() {
-    while [ ! "$key" = "q" ]
-    do
+    while [ ! "$key" = "q" ]; do
         set_time_now
         case "$status" in
             1)
