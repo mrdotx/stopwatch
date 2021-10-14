@@ -3,7 +3,11 @@
 # path:   /home/klassiker/.local/share/repos/stopwatch/stopwatch.sh
 # author: klassiker [mrdotx]
 # github: https://github.com/mrdotx/stopwatch
-# date:   2021-01-15T14:01:10+0100
+# date:   2021-10-14T21:44:14+0200
+
+# speed up script by not using unicode
+LC_ALL=C
+LANG=C
 
 script=$(basename "$0")
 help="$script [-h/--help] -- script to measure the time
