@@ -3,7 +3,7 @@
 # path:   /home/klassiker/.local/share/repos/stopwatch/stopwatch.sh
 # author: klassiker [mrdotx]
 # github: https://github.com/mrdotx/stopwatch
-# date:   2021-10-14T21:44:14+0200
+# date:   2021-11-02T10:51:27+0100
 
 # speed up script by not using unicode
 LC_ALL=C
@@ -96,11 +96,11 @@ case "$1" in
         printf "%s\n" "$help"
         ;;
     -d)
-        clear
+        tput reset
         stopwatch
         ;;
     *)
-        clear
+        tput reset
         printf "%s\n" "$header"
         stopwatch
         ;;
