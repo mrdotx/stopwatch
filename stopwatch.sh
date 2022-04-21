@@ -3,9 +3,9 @@
 # path:   /home/klassiker/.local/share/repos/stopwatch/stopwatch.sh
 # author: klassiker [mrdotx]
 # github: https://github.com/mrdotx/stopwatch
-# date:   2021-11-02T10:51:27+0100
+# date:   2022-04-21T10:48:46+0200
 
-# speed up script by not using unicode
+# speed up script by using posix
 LC_ALL=C
 LANG=C
 
