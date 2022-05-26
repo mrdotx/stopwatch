@@ -3,7 +3,7 @@
 # path:   /home/klassiker/.local/share/repos/stopwatch/stopwatch.sh
 # author: klassiker [mrdotx]
 # github: https://github.com/mrdotx/stopwatch
-# date:   2022-04-24T08:06:45+0200
+# date:   2022-05-26T18:47:42+0200
 
 # speed up script by using standard c
 LC_ALL=C
@@ -19,14 +19,14 @@ help="$script [-h/--help] -- script to measure the time
 
   Keys:
     Start/Stop: space
-    Quit:       q
+    Quit:       q or esc
 
   Examples:
     $script
     $script -d"
 
 header=" Start/Stop: space
- Quit:       q
+ Quit:       q or esc
  "
 
 time_stop=0
@@ -75,7 +75,7 @@ read_key() {
 }
 
 stopwatch() {
-    while [ ! "$key" = "q" ]; do
+    while ! { [ "$key" = $'\e' ] || [ "$key" = "q" ]; }; do
         set_time_now
         case "$status" in
             1)
