@@ -3,7 +3,7 @@
 # path:   /home/klassiker/.local/share/repos/stopwatch/stopwatch.sh
 # author: klassiker [mrdotx]
 # github: https://github.com/mrdotx/stopwatch
-# date:   2022-05-26T18:47:42+0200
+# date:   2022-07-12T11:04:11+0200
 
 # speed up script by using standard c
 LC_ALL=C
@@ -47,7 +47,7 @@ time_date() {
 }
 
 run() {
-    time_stop=$((time_now-time_index))
+    time_stop=$((time_now - time_index))
     time_date $time_stop
 }
 
@@ -63,7 +63,7 @@ read_key() {
         1)
             [ "$key" = $'\x20' ] \
                 && printf "\n" \
-                && n=$((n+1)) \
+                && n=$((n + 1)) \
                 && return 2
             ;;
         2)
